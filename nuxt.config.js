@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'front-magpie-starter',
+    title: 'my-nuxt',
     htmlAttrs: {
       lang: 'en'
     },
@@ -14,15 +14,35 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
+  },
+  loading: {
+    color: '#30c7b4',
+    height: '2px'
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'ant-design-vue/dist/antd.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '~assets/css/base.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/antd-ui'
+    { 
+      src: '~plugins/element.js',
+      ssr: true
+    },
+    {
+      src: '~plugins/axios.js',
+      srr: true
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -34,9 +54,26 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios'
   ],
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    analyze: true,
+    // 按需引入element-ui
+    babel: {
+      plugins: [
+        [ "component", 
+          {
+            "libraryName": "element-ui",
+            "styleLibraryName": "theme-chalk"
+          }
+        ] 
+      ] 
+    }
   }
 }

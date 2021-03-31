@@ -1,9 +1,31 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+<el-container class="default-layout">
+  <Nav />
+  <el-container>
+    <el-header :style="{height:'100px',padding:'0px'}"><Header/></el-header>
+    <el-main class="sun-content"><Nuxt /></el-main>
+  </el-container>
+</el-container>
 </template>
-
+<script>
+import Nav from '../components/Nav.vue'
+import Header from '../components/Header.vue'
+import {mapState} from 'vuex'
+export default {
+  computed:{
+    ...mapState(['openRouteList','currentRoute'])
+  },
+  components:{Nav,Header},
+  watch:{
+    '$route':{
+      immediate:true,
+      handler:function(to) {
+        this.$store.commit('M_UPDATE_CURRENT_ROUTE',to.path)
+      }
+    }
+  }
+}
+</script>
 <style>
 html {
   font-family:
@@ -29,34 +51,17 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.sun-content {
+  background-color: #f8f8f8;
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.default-layout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.sun-body {
+  flex: 1;
 }
 </style>

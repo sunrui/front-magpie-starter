@@ -1,0 +1,59 @@
+div,img,span,p,ul,li,ol,h1,h2,h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* 重置 element 样式 */
+.sun-header .el-tabs__nav-wrap::after {
+  height: 0px;
+  opacity: 0 !important;
+}
+.sun-header .el-tabs__active-bar {
+  opacity: 0;
+}
+.sun-header .is-active {
+  background-color: rgba(48,199,180,0.1);
+  border-bottom: 3px solid #30c7b4;
+}
+.sun-header .el-tabs__item {
+  padding: 0px 10px !important;
+}
+
+.el-menu {
+  border: 0 !important;
+}
+
+.el-card .el-card__header {
+  padding: 13px 20px;
+}
+.sun-body .el-card {
+  margin-bottom: 15px;
+}
+
+.table-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-bar {
+  padding: 5px 15px;
+  border: 1px solid #EBEEF5;
+  border-bottom: 0;
+  background-color: #f4f4f5;
+}
+
+.sun-page-header {
+  font-size: 19px;
+  color: #303133;
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 20px 25px 16px;
+}
+.sun-page-desc {
+  margin-top: 8px;
+  color: #909399;
+  font-size: 14px;
+}

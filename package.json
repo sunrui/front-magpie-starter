@@ -1,5 +1,5 @@
 {
-  "name": "front-magpie-starter",
+  "name": "nuxt-template",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,17 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "ant-design-vue": "^1.7.4",
-    "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "@nuxtjs/axios": "^5.12.5",
+    "core-js": "^3.8.3",
+    "element-ui": "^2.15.0",
+    "less": "^4.1.1",
+    "less-loader": "^5.0.0",
+    "nuxt": "^2.14.12"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-plugin-component": "^1.1.1",
+    "element-theme-chalk": "^2.15.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
+  }
 }
