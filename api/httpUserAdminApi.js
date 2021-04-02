@@ -10,5 +10,8 @@ export const httpUserAdminApi = {
                 pageSize: 100
             }
         }).then(res => res.data)
+    },
+    deleteDestroy(userId) {
+        return axios.delete(`${base}/destroy/${userId}`).then(res => res.data)
     }
 }

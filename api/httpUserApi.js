@@ -2,19 +2,21 @@ import axios from 'axios/index'
 
 let base = '/api/user'
 
+let refer = {
+    appId: 0,
+    device: '',
+    deviceUuid: '',
+    deviceVersion: '',
+    directInvitorUserId: ''
+}
+
 export const httpUserApi = {
     postLoginPassword(userName, password) {
         return axios.post(`${base}/login/password`,
             {
                 maxAge: 604800000,
                 password: password,
-                refer: {
-                    appId: 0,
-                    device: '',
-                    deviceUuid: '',
-                    deviceVersion: '',
-                    directInvitorUserId: ''
-                },
+                refer: refer,
                 userName: userName
             }).then(res => res.data)
     },
@@ -23,5 +25,16 @@ export const httpUserApi = {
     },
     getState() {
         return axios.get(`${base}/state`).then(res => res.data)
+    },
+    postRegister(userName, phone, password, comment) {
+        return axios.post(`${base}/register`,
+            {
+                userName: userName,
+                phone: phone,
+                password: password,
+                refer: refer,
+                comment: comment,
+                magic: 'magpie'
+            }).then(res => res.data)
     }
 }
