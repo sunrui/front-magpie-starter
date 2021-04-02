@@ -61,7 +61,7 @@ export default {
           return this.$message.error('密码校验错误。')
         } else if (res.user) {
           this.$message.success('登录成功')
-          this.$router.replace('/dashboard/workplace')
+          this.$router.replace('/admin/dashboard')
         }
       })
     }

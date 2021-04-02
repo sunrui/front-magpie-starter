@@ -1,4 +1,4 @@
-import routeList from '../static/data/router'
+import routeList from '../router-admin'
 console.log()
 export const state = () => ({
   userInfo: {username:'管理员',avatar:'/imgs/avatar.jpg'},

@@ -43,6 +43,7 @@ div,img,span,p,ul,li,ol,h1,h2,h3,h4,h5 {
   border: 1px solid #EBEEF5;
   border-bottom: 0;
   background-color: #f4f4f5;
+  text-align: right;
 }
 
 .sun-page-header {

@@ -14,6 +14,20 @@ export default [
     ]
   },
   {
+    "id": 1,
+    "title":"Dashboard",
+    "path": "/dashboard",
+    "icon":"el-icon-discount",
+    "children": [
+      {
+        "id": 1,
+        "path": "/dashboard/workplace",
+        "title":"工作台",
+        "icon":"el-icon-suitcase"
+      }
+    ]
+  },
+  {
     "id": 2,
     "title":"系统管理",
     "path": "/system",
