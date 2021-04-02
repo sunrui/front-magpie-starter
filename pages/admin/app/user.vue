@@ -39,6 +39,15 @@
         <el-form-item label="密码">
           <el-input v-model="model.user.password" :rule="rules.user.password" placeholder="请输入密码"></el-input>
         </el-form-item>
+        <el-form-item label="角色">
+          <el-select
+              v-model="model.user.role"
+              placeholder="请选择"
+              clearable>
+            <el-option label="客户" value="CUSTOMER"/>
+            <el-option label="管理员" value="ADMIN"/>
+          </el-select>
+        </el-form-item>
         <el-form-item label="备注">
           <el-input v-model="model.user.comment" placeholder="请输入备注"></el-input>
         </el-form-item>
@@ -68,6 +77,7 @@ export default {
           userName: 'sunrui',
           phone: '15068860507',
           password: '123456',
+          role: 'CUSTOMER',
           comment: '备注'
         }
       },
@@ -100,6 +110,7 @@ export default {
 
         for (let user of res.elements) {
           user.createdAt = timeApi.dateFormat(new Date(parseInt(user.createdAt)))
+          user.role = user.role === 'ADMIN' ? '管理员' : '客户'
         }
       })
     },
@@ -120,9 +131,14 @@ export default {
         return this.$message.error('密码不合法。')
       }
 
+      if (!this.model.user.role) {
+        return this.$message.error('请选择角色。')
+      }
+
       httpUserApi.postRegister(this.model.user.userName,
           this.model.user.phone,
           this.model.user.password,
+          this.model.user.role,
           this.model.user.comment
       ).then(res => {
         if (res.userNameExists) {
@@ -141,12 +157,21 @@ export default {
       })
     },
     btnDelete(userId) {
-      httpUserAdminApi.deleteDestroy(userId).then(res => {
-        if (res.userIdNotExists) {
-          return this.$message.error('用户 ID 不存在。')
-        } else if (res.success) {
-          this.$message.info('注销成功。')
-        }
+      this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        httpUserAdminApi.deleteDestroy(userId).then(res => {
+          if (res.cannotDestroyYourself) {
+            return this.$message.error('不能注销您自己。')
+          } else if (res.userIdNotExists) {
+            return this.$message.error('用户 ID 不存在。')
+          } else if (res.success) {
+            this.$message.info('注销成功。')
+            this.httpGetAllUser()
+          }
+        })
       })
     }
   }
