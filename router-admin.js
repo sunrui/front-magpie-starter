@@ -16,19 +16,39 @@ export default [
   {
     "id": 2,
     "title":"客户管理",
-    "path": "/admin/system",
+    "path": "/admin/user",
     "icon":"el-icon-setting",
     "children": [
       {
         "id": 1,
-        "path": "/admin/app/user",
-        "title":"用户管理",
+        "path": "/admin/customer/user",
+        "title":"后台用户管理",
         "icon":"el-icon-user"
       },
       {
         "id": 2,
-        "path": "/admin/system/role",
-        "title":"角色管理",
+        "path": "/admin/customer/app",
+        "title":"开发账号管理",
+        "icon":"el-icon-postcard"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title":"通道管理",
+    "path": "/admin/user",
+    "icon":"el-icon-setting",
+    "children": [
+      {
+        "id": 1,
+        "path": "/admin/customer/user",
+        "title":"paystack",
+        "icon":"el-icon-user"
+      },
+      {
+        "id": 2,
+        "path": "/admin/customer/app",
+        "title":"other",
         "icon":"el-icon-postcard"
       }
     ]
