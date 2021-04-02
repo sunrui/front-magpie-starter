@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'my-nuxt',
+    title: '支付管理后台',
     htmlAttrs: {
       lang: 'en'
     },

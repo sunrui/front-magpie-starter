@@ -36,7 +36,7 @@ import {mapState} from 'vuex'
 export default {
   data() {
     return {
-      title:'Sun Admin',
+      title:'支付管理后台',
       showTitle:true
     }
   },

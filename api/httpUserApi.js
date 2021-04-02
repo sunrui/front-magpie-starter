@@ -9,7 +9,7 @@ export const httpUserApi = {
                 maxAge: 604800000,
                 password: password,
                 refer: {
-                    channelId: 0,
+                    appId: 0,
                     device: '',
                     deviceUuid: '',
                     deviceVersion: '',
@@ -17,5 +17,11 @@ export const httpUserApi = {
                 },
                 userName: userName
             }).then(res => res.data)
+    },
+    postLogout() {
+        return axios.post(`${base}/logout`).then(res => res.data)
+    },
+    getState() {
+        return axios.get(`${base}/state`).then(res => res.data)
     }
 }

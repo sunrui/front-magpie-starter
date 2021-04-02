@@ -46,7 +46,6 @@ export const mutations = {
       state.currentLine = currentLine
       let c = state.openRouteList.some(item=>item.path === path)
       if(!c) {
-        console.log('啦啦啦啦',current)
         state.openRouteList.push(current)
       }
     }

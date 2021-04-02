@@ -1,13 +1,28 @@
-export default function({$axios,store}) {
-  $axios.defaults.timeout = 50000
-  // $axios.defaults.baseURL = 'http://localhost:4000'
+import axios from 'axios'
 
-  $axios.onRequest = function(config) {
-    console.log('请求拦截')
-    return config
+axios.defaults.withCredentials = true
+axios.defaults.timeout = 30 * 1000
+
+axios.interceptors.request.use((config) => {
+  return config
+}, (err) => {
+  return Promise.reject(err)
+})
+
+axios.interceptors.response.use(function (response) {
+  console.groupCollapsed('%c' + response.config.method.toUpperCase() + '%c ' + response.request.responseURL, 'background:#FF6958;color:white', 'color:#000')
+  console.log(response.config.data ? JSON.parse(response.config.data) : '<null>')
+  console.log(response.data ? response.data : '<null>')
+  console.groupEnd()
+
+  return response
+}, function (err) {
+  if (err && err.response) {
+    if (err.response.data.error === 'HttpUnauthorized') {
+      window.location.href = `/`
+      return
+    }
   }
-  $axios.onResponse= function(data) {
-    console.log('响应拦截')
-    return data
-  }
-}
+
+  return Promise.reject(err)
+})
