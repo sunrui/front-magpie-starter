@@ -18,8 +18,8 @@ axios.interceptors.response.use(function (response) {
   return response
 }, function (err) {
   if (err && err.response) {
-    if (err.response.data.error === 'HttpUnauthorized') {
-      window.location.href = `/`
+    if (err.response.data.exception === 'Unauthorized') {
+      window.location.href = `/user/login`
       return
     }
   }

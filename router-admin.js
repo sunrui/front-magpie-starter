@@ -36,18 +36,18 @@ export default [
   {
     "id": 2,
     "title":"通道管理",
-    "path": "/admin/user",
+    "path": "/admin/channel",
     "icon":"el-icon-setting",
     "children": [
       {
         "id": 1,
-        "path": "/admin/customer/user",
+        "path": "/admin/channel/user",
         "title":"paystack",
         "icon":"el-icon-user"
       },
       {
         "id": 2,
-        "path": "/admin/customer/app",
+        "path": "/admin/channel/app",
         "title":"other",
         "icon":"el-icon-postcard"
       }
