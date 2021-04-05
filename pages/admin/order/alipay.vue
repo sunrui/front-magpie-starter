@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <h2>成功页面</h2>
-  </div>
+
 </template>
 
 <script>
 export default {
-
+  name: "alipay.vue"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

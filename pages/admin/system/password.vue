@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <h2>失败页面</h2>
-  </div>
+
 </template>
 
 <script>
 export default {
-
+  name: "password"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

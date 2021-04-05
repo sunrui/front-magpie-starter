@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <h2>卡片列1表</h2>
-  </div>
+
 </template>
 
 <script>
 export default {
-
+  name: "paystack.vue"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

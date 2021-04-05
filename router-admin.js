@@ -1,128 +1,96 @@
 export default [
-  {
-    "id": 1,
-    "title":"Dashboard",
-    "path": "/admin/admin",
-    "icon":"el-icon-discount",
-    "children": [
-      {
+    {
         "id": 1,
-        "path": "dashboard",
-        "title":"工作台",
-        "icon":"el-icon-suitcase"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title":"客户管理",
-    "path": "/admin/user",
-    "icon":"el-icon-setting",
-    "children": [
-      {
-        "id": 1,
-        "path": "/admin/customer/user",
-        "title":"后台用户管理",
-        "icon":"el-icon-user"
-      },
-      {
+        "title": "Dashboard",
+        "path": "/admin",
+        "icon": "el-icon-discount",
+        "children": [
+            {
+                "id": 1,
+                "path": "/admin/dashboard",
+                "title": "工作台",
+                "icon": "el-icon-suitcase"
+            }
+        ]
+    },
+    {
         "id": 2,
-        "path": "/admin/customer/app",
-        "title":"开发账号管理",
-        "icon":"el-icon-postcard"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title":"通道管理",
-    "path": "/admin/channel",
-    "icon":"el-icon-setting",
-    "children": [
-      {
-        "id": 1,
-        "path": "/admin/channel/user",
-        "title":"paystack",
-        "icon":"el-icon-user"
-      },
-      {
-        "id": 2,
-        "path": "/admin/channel/app",
-        "title":"other",
-        "icon":"el-icon-postcard"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "title":"表单页面",
-    "path": "/admin/form",
-    "icon":"el-icon-tickets",
-    "children": [
-      {
-        "id": 1,
-        "path": "/admin/form/basic",
-        "title":"基础表单",
-        "icon":"el-icon-document-copy"
-      },
-      {
-        "id": 2,
-        "path": "/admin/form/advanced",
-        "title":"复杂表单",
-        "icon":"el-icon-collection"
-      },
-      {
+        "title": "订单管理",
+        "path": "/admin/order",
+        "icon": "el-icon-tickets",
+        "children": [
+            {
+                "id": 1,
+                "path": "/admin/order/paystack",
+                "title": "paystack",
+                "icon": "el-icon-tickets"
+            },
+            {
+                "id": 2,
+                "path": "/admin/order/alipay",
+                "title": "支付宝",
+                "icon": "el-icon-tickets"
+            }
+        ]
+    },
+    {
         "id": 3,
-        "path": "/admin/form/step",
-        "title":"分布表单",
-        "icon":"el-icon-c-scale-to-original"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "title":"列表页面",
-    "path": "/admin/list",
-    "icon":"el-icon-money",
-    "children": [
-      {
-        "id": 1,
-        "path": "/admin/list/basic",
-        "title":"基础列表",
-        "icon":"el-icon-film"
-      },
-      {
-        "id": 2,
-        "path": "/admin/list/advanced",
-        "title":"复杂列表",
-        "icon":"el-icon-notebook-2"
-      },
-      {
-        "id": 3,
-        "path": "/admin/list/card",
-        "title":"卡片列表",
-        "icon":"el-icon-menu"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "title":"结果页面",
-    "path": "/admin/result",
-    "icon":"el-icon-circle-check",
-    "children": [
-      {
-        "id": 1,
-        "path": "/admin/result/success",
-        "title":"成功页",
-        "icon":"el-icon-circle-check"
-      },
-      {
-        "id": 2,
-        "path": "/admin/result/fail",
-        "title":"失败页",
-        "icon":"el-icon-circle-close"
-      }
-    ]
-  }
+        "title": "通道管理",
+        "path": "/admin/config",
+        "icon": "el-icon-money",
+        "children": [
+            {
+                "id": 1,
+                "path": "/admin/config/paystack",
+                "title": "paystack",
+                "icon": "el-icon-money"
+            },
+            {
+                "id": 2,
+                "path": "/admin/config/alipay",
+                "title": "支付宝",
+                "icon": "el-icon-postcard"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "用户管理",
+        "path": "/admin/developer",
+        "icon": "el-icon-user",
+        "children": [
+            {
+                "id": 1,
+                "path": "/admin/developer/user",
+                "title": "登录管理",
+                "icon": "el-icon-user"
+            },
+            {
+                "id": 2,
+                "path": "/admin/developer/account",
+                "title": "账户管理",
+                "icon": "el-icon-user"
+            },
+            {
+                "id": 3,
+                "path": "/admin/developer/app",
+                "title": "开发者管理",
+                "icon": "el-icon-postcard"
+            },
+        ]
+    },
+    {
+        "id": 5,
+        "title": "系统管理",
+        "path": "admin/system",
+        "icon": "el-icon-setting",
+        "children": [
+            {
+                "id": 1,
+                "path": "admin/system/password",
+                "title": "修改密码",
+                "icon": "el-icon-film"
+            }
+        ]
+    }
 ]
