@@ -164,7 +164,7 @@ export default {
       }).then(() => {
         httpUserAdminApi.deleteDestroy(userId).then(res => {
           if (res.cannotDestroyYourself) {
-            return this.$message.error('不能注销您自己。')
+            return this.$message.error('不能删除您自己。')
           } else if (res.userIdNotExists) {
             return this.$message.error('用户 ID 不存在。')
           } else if (res.success) {

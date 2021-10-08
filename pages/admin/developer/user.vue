@@ -168,7 +168,7 @@ export default {
           } else if (res.userIdNotExists) {
             return this.$message.error('用户 ID 不存在。')
           } else if (res.success) {
-            this.$message.info('注销成功。')
+            this.$message.info('删除成功。')
             this.httpGetAllUser()
           }
         })
